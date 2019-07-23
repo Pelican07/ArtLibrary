@@ -1,0 +1,26 @@
+.ico {
+    color: #7f8fa6;
+    padding-top: 1em;
+}
+
+ /* .resoSocial {
+    background-color: #74b9ff;
+} */
+
+.copyright {
+    color: #7f8fa6;
+    /* background-color: #0984e3; */
+} 
+
+a {
+    color: #2980b9;
+}
+
+footer
+{
+  background-color: #dcdde1;
+  height: 5em;
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-attachment: fixed;
+}
