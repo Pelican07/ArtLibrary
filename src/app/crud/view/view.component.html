@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 col-xs-12">
+        <button class="btn btn-success" (click)="getNavigation('create', '')">Create New Book</button>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 col-xs-12">
+        <table #productsTable class="display" style="width:100%">
+          <thead>
+          <tr>
+          <th>#</th>
+          <th>Titre</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Resume</th>
+          <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let book of books; let i =index;">
+            <td>{{i + 1}}</td>
+            <td>{{book.titre}}</td>
+            <td>{{book.nom_auteur}}</td>
+            <td>{{book.prenom_auteur}}</td>
+            <td>$ {{book.resume}}</td>
+
+            <td>
+              <button type="button" class="btn btn-success" (click)="getNavigation('view', book.id)">View</button>
+              <button type="button" class="btn btn-warning" (click)="getNavigation('update', book.id)">Edit</button>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
