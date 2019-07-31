@@ -39,8 +39,8 @@ export class ViewComponent implements OnInit {
   }
 
   // method for processing navigation. It has two input parameters. One is a path, and another one is product id.
-   getNavigation(link, id){
-    if (id === ''){
+   getNavigation(link: string, id: string){
+    if (id === '') {
         this.router.navigate([link]);
     } else {
         this.router.navigate([link + '/' + id]);
