@@ -20,16 +20,16 @@
           </thead>
           <tbody>
           <tr *ngFor="let book of books; let i =index;">
-            <td>{{i + 1}}</td>
+            <td>{{book.id}}</td>
             <td>{{book.titre}}</td>
             <td>{{book.nom_auteur}}</td>
             <td>{{book.prenom_auteur}}</td>
-            <td>$ {{book.resume}}</td>
+            <td>{{book.resume}}</td>
 
             <td>
-              <button type="button" class="btn btn-success" (click)="getNavigation('view', book.id)">View</button>
+              <button type="button" class="btn btn-success" (click)="getNavigation('read', book.id)">Read</button>
               <button type="button" class="btn btn-warning" (click)="getNavigation('update', book.id)">Edit</button>
-              <button type="button" class="btn btn-danger">Delete</button>
+              <button type="button" class="btn btn-danger" (click)="getNavigation('delete', book.id)">Delete</button>
             </td>
           </tr>
           </tbody>

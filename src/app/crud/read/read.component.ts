@@ -19,19 +19,22 @@ export class ReadComponent implements OnInit {
 
   ngOnInit() {
     // to get the book id from URL, use ActivatedRoute fonctionnality
-    this. bookID = this.actRoute.snapshot.params['id'];
+    this.bookID = this.actRoute.snapshot.params.id;
     this.loadBookDetails(this.bookID);
   }
 
   loadBookDetails(bookID: number) {
     this.crudService.getBookDetails(bookID)
     // access to the CRUD service and got detail
-    .subscribe(book => {this.bookData = book;
+    .subscribe(book => {
+      console.log('bookid:', bookID);
+      this.bookData = book;
+      console.log(this.bookData);
     // book details saved into bookData property
     });
   }
 
-  navigation(link: any){
+  navigation(link: any) {
     this.router.navigate([link]);
   }
 }

@@ -1,1 +1,52 @@
-<p>create works!</p>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-lg-12 col-md-12 sol-sm-12">
+        <form [formGroup]="bookForm" (ngSubmit)="saveBook(bookForm.value)">
+          <div class="form-group">
+            <label>Titre</label>
+            <input type="text" class="form-control" placeholder="Titre" formControlName="titre" required>
+           <div class="alert-danger" *ngIf="!bookForm.controls['titre'].valid && (bookForm.controls['titre'].touched)">
+              <div [hidden]="!bookForm.controls['titre'].errors.required">
+                Le titre est requis.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Nom</label>
+            <input type="text" class="form-control" placeholder="Nom" formControlName="nom" required>
+            <div class="alert-danger" *ngIf="!bookForm.controls['nom'].valid && (bookForm.controls['nom'].touched)">
+              <div [hidden]="!bookForm.controls['nom'].errors.required">
+                Le nom est requis.
+              </div>
+            </div> 
+          </div>
+          <div class="form-group">
+            <label>Prenom</label>
+            <input type="text" class="form-control" placeholder="Prenom" formControlName="prenom" required>
+            <div class="alert-danger" *ngIf="!bookForm.controls['prenom'].valid && (bookForm.controls['prenom'].touched)">
+              <div [hidden]="!bookForm.controls['prenom'].errors.required">
+                Le prenom est requis.
+              </div>
+            </div> 
+          </div>
+          <div class="form-group">
+            <label>Résumé</label>
+            <input type="text" class="form-control" placeholder="resume" formControlName="resume" required>
+             <div class="alert-danger" *ngIf="!bookForm.controls['resume'].valid && (bookForm.controls['resume'].touched)">
+              <div [hidden]="!bookForm.controls['resume'].errors.required">
+                Un résumé est requis.
+              </div>
+              <div [hidden]="!bookForm.controls['resume'].errors.minlength">
+                Un résumé doit avoir 10 caractères de long au min.
+              </div>
+              <div [hidden]="!productForm.controls['resume'].errors.maxlength">
+                Un résumé doit avoir 1000 caractères de long au max.
+              </div>
+            </div> 
+          </div>
+<!-------------Foms "valid" à revoir!!! -------------->
+          <button type="submit" class="btn btn-primary" [disabled]="!bookForm.valid">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
