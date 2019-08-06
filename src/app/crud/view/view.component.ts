@@ -38,6 +38,13 @@ export class ViewComponent implements OnInit {
     );
   }
 
+  // method to delete a book
+  deleteBook(ID) {
+    this.crudService.deleteBook(ID).subscribe(data => {
+      this.loadBooks();
+    });
+  }
+
   // method for processing navigation. It has two input parameters. One is a path, and another one is product id.
    getNavigation(link: string, id: string){
     if (id === '') {

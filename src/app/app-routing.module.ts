@@ -18,7 +18,8 @@ const routes: Routes = [
   {path: 'create', component: CreateComponent},
   {path: 'update/:id', component: UpdateComponent},
   {path: 'read/:id', component: ReadComponent},
-  {path: '', component: ViewComponent}
+  {path: 'homeViewBooks', component: ViewComponent},
+  {path: '', component: PageHomeComponent}
 ];
 
 @NgModule({
