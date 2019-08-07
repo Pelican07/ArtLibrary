@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CrudService {
   // base api url
-  public url = 'http://localhost/web_api_library/';
+  public url = 'http://localhost/web_api_library/book/';
 
   constructor(private http: HttpClient) { }
 

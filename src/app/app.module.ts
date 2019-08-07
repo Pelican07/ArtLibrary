@@ -15,6 +15,8 @@ import { CreateComponent } from './crud/create/create.component';
 import { UpdateComponent } from './crud/update/update.component';
 import { ReadComponent } from './crud/read/read.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PageArtsComponent } from './Arts/page-arts/page-arts.component';
+import { ViewArtsComponent } from './Arts/view-arts/view-arts.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     ViewComponent,
     CreateComponent,
     UpdateComponent,
-    ReadComponent
+    ReadComponent,
+    PageArtsComponent,
+    ViewArtsComponent
   ],
   imports: [
     BrowserModule,

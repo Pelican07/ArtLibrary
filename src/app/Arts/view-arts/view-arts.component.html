@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 col-xs-12">
+        <button class="btn btn-success" >Create New Book</button>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 col-xs-12">
+        <table #productsTable class="display" style="width:100%">
+          <thead>
+          <tr>
+          <th>#</th>
+          <th>Titre</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Année</th>
+          <th>Caractéristiques</th>
+          <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let art of arts; let i =index;">
+            <td>{{art.a_id}}</td>
+            <td>{{art.titre_oeuvre}}</td>
+            <td>{{art.nom_artiste}}</td>
+            <td>{{art.prenom_artiste}}</td>
+            <td>{{art.annee}}</td>
+            <td>{{art.details}}</td>
+
+            <td>
+              <button type="button" class="btn btn-success" >Read</button>
+              <button type="button" class="btn btn-warning" >Edit</button>
+              <button type="button" class="btn btn-danger" >Delete</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

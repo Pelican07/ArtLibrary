@@ -8,6 +8,7 @@ import {ViewComponent} from './crud/view/view.component';
 import {CreateComponent} from './crud/create/create.component';
 import {UpdateComponent} from './crud/update/update.component';
 import {ReadComponent} from './crud/read/read.component';
+import { PageArtsComponent } from './Arts/page-arts/page-arts.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'update/:id', component: UpdateComponent},
   {path: 'read/:id', component: ReadComponent},
   {path: 'homeViewBooks', component: ViewComponent},
+  {path: 'pageArts', component: PageArtsComponent },
   {path: '', component: PageHomeComponent}
 ];
 
