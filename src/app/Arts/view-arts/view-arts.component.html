@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row">
       <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 col-xs-12">
-        <button class="btn btn-success" >Create New Book</button>
+        <button class="btn btn-success" (click)="getNavigation('createArt', '')">Create New Art</button>
       </div>
     </div>
     <br>
     <div class="row">
       <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 col-xs-12">
-        <table #productsTable class="display" style="width:100%">
+        <table #artsTable class="display" style="width:100%">
           <thead>
           <tr>
           <th>#</th>
@@ -29,9 +29,9 @@
             <td>{{art.details}}</td>
 
             <td>
-              <button type="button" class="btn btn-success" >Read</button>
-              <button type="button" class="btn btn-warning" >Edit</button>
-              <button type="button" class="btn btn-danger" >Delete</button>
+              <button type="button" class="btn btn-success" (click)="getNavigation('readArt', art.a_id)">Read</button>
+              <button type="button" class="btn btn-warning" (click)="getNavigation('updateArt', art.a_id)">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="deleteArt(art.a_id)">Delete</button>
             </td>
           </tr>
           </tbody>

@@ -1,0 +1,30 @@
+<div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-12 col-md-12 sol-sm-12">
+            <table class="table table-striped">
+              <tr>
+                <td>Titre</td>
+                <td>{{artData['titre_oeuvre']}}</td>
+              </tr>
+            <tr>
+                <td>Nom</td>
+                <td>{{artData['nom_artiste']}}</td>
+              </tr> 
+              <tr>
+                <td>Prénom</td>
+                <td>{{artData['prenom_artiste']}}</td>
+            </tr> 
+            <tr>
+                <td>Année</td>
+                <td>{{artData['annee']}}</td>
+            </tr> 
+              <tr>
+                <td>Caractéristiques</td>
+                <td>{{artData['details']}}</td>
+              </tr>
+            </table>
+            <br>
+            <button class="btn btn-warning" (click)="navigation('')">Go Back</button>
+          </div>
+        </div>
+      </div>

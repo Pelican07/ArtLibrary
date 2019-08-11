@@ -17,6 +17,9 @@ import { ReadComponent } from './crud/read/read.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PageArtsComponent } from './Arts/page-arts/page-arts.component';
 import { ViewArtsComponent } from './Arts/view-arts/view-arts.component';
+import { UpdateArtsComponent } from './Arts/update-arts/update-arts.component';
+import { ReadArtsComponent } from './Arts/read-arts/read-arts.component';
+import { CreateArtsComponent } from './Arts/create-arts/create-arts.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { ViewArtsComponent } from './Arts/view-arts/view-arts.component';
     UpdateComponent,
     ReadComponent,
     PageArtsComponent,
-    ViewArtsComponent
+    ViewArtsComponent,
+    UpdateArtsComponent,
+    ReadArtsComponent,
+    CreateArtsComponent
   ],
   imports: [
     BrowserModule,

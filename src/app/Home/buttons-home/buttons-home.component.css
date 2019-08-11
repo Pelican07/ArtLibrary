@@ -1,7 +1,28 @@
 #bookList {
-    background-color: brown;
+    background-color: #833471;
+    margin-top: 6em;
+}
+
+#artList {
+    background-color: #f0932b;
+}
+
+#movieList {
+    background-color: #1289A7;
 }
 
 .btn {
-    margin-bottom: 10em;
+   
+   
+    border-radius: 25em;
+    padding: 2em;
+    
+}
+
+.buttonStyle {
+    /*width: 100px; 
+     margin: 0 auto;   
+    display: flex;
+    flex-direction: row;*/
+   
 }

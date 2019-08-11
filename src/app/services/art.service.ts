@@ -13,4 +13,16 @@ export class ArtService {
   getArts() {
     return this.http.get(this.url + 'view.php');
   }
+  getArtDetails(id: number) {
+    return this.http.get(this.url + 'view_one.php?id=' + id);
+  }
+  createArt(data: any) {
+    return this.http.post(this.url + 'create.php', data);
+  }
+  updateArt(data: any) {
+    return this.http.post(this.url + 'update.php', data);
+  }
+  deleteArt(id: number) {
+    return this.http.get(this.url + 'delete.php?id=' + id);
+  }
 }

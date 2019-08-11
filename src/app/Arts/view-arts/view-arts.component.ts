@@ -35,4 +35,11 @@ export class ViewArtsComponent implements OnInit {
         this.router.navigate([link + '/' + id]);
     }
   }
+
+  // method to delete a book
+  deleteArt(ID) {
+    this.artService.deleteArt(ID).subscribe(data => {
+      this.loadArts();
+    });
+  }
 }

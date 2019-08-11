@@ -28,7 +28,7 @@
             <input type="text" class="form-control" placeholder="Prénom" formControlName="prenom" required>
             <div class="alert-danger" *ngIf="!bookForm.controls['prenom'].valid && (bookForm.controls['prenom'].touched)">
               <div [hidden]="!bookForm.controls['prenom'].errors.required">
-                Nom is required.
+                Prenom is required.
               </div>
             </div>
           </div>
