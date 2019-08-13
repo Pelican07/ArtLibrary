@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageHomeComponent } from './Home/page-home/page-home.component';
 // Books
 import { PageBooksComponent } from './Books/page-books/page-books.component';
-import { ListBooksComponent } from './Books/list-books/list-books.component';
+import { ViewBooksComponent } from './Books/view-books/view-books.component';
 // Crud
 import {ViewComponent} from './crud/view/view.component';
 import {CreateComponent} from './crud/create/create.component';
@@ -20,7 +20,7 @@ import { ReadArtsComponent } from './Arts/read-arts/read-arts.component';
 const routes: Routes = [
   {path: 'home', component: PageHomeComponent },
   {path: 'pageBooks', component: PageBooksComponent },
-  {path: 'listBooks', component: ListBooksComponent },
+  {path: 'viewBooks', component: ViewBooksComponent },
   // { path: '', redirectTo: '/home', pathMatch: 'full'}
   {path: 'create', component: CreateComponent},
   {path: 'update/:id', component: UpdateComponent},
