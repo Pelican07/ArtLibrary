@@ -11,24 +11,27 @@
                   </div>
                 </div>
               </div>
+              
+            <!-- Possibilité choix d'un auteur dans une liste déroulante. Reste à rajouter formcontrol!!! -->
               <div class="form-group">
-                <label>Nom</label>
-                <input type="text" class="form-control" placeholder="Nom" formControlName="nom" required>
-                <div class="alert-danger" *ngIf="!artForm.controls['nom'].valid && (artForm.controls['nom'].touched)">
-                  <div [hidden]="!artForm.controls['nom'].errors.required">
-                    Le nom est requis.
-                  </div>
-                </div> 
+                <p>Auteur</p>
+                <select >
+                  <option [ngValue]="null">Sélectionne un auteur</option>
+                  <option *ngFor="let Auteur of auteurs" [value]="Auteur.id">{{Auteur.nom}} {{Auteur.prenom}}</option>
+                </select>
               </div>
               <div class="form-group">
-                <label>Prenom</label>
-                <input type="text" class="form-control" placeholder="Prenom" formControlName="prenom" required>
-                <div class="alert-danger" *ngIf="!artForm.controls['prenom'].valid && (artForm.controls['prenom'].touched)">
-                  <div [hidden]="!artForm.controls['prenom'].errors.required">
-                    Le prenom est requis.
+                <p>Ou crée un nouvel auteur !</p>
+                <div class="row">
+                  <div class="col-6">
+                    <input type="text" class="form-control" placeholder="Nom" formControlName="nom" required>
                   </div>
-                </div> 
+                  <div class="col-6">
+                    <input type="text" class="form-control" placeholder="Prenom" formControlName="prenom" required>
+                  </div>
+                </div>
               </div>
+
               <div class="form-group">
                 <label>Annee</label>
                 <input type="number" class="form-control" placeholder="Annee" formControlName="annee" required>

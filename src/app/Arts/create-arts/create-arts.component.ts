@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ArtService } from 'src/app/services/art.service';
+import { AuteurService } from 'src/app/services/auteur.service';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,11 +12,15 @@ import { Router } from '@angular/router';
 })
 export class CreateArtsComponent implements OnInit {
   artForm: FormGroup;
+  public auteurs: any = [];
+
+
 
   constructor(
     private fb: FormBuilder,
     private artService: ArtService,
-    private router: Router
+    private router: Router,
+    private auteurservice: AuteurService,
   ) {
     // using the Validators for implementing the form validation
     this.artForm = this.fb.group({
@@ -27,7 +33,19 @@ export class CreateArtsComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.loadauteurs();
+
   }
+
+    // method for loading all auteurs. It is using the crud service to getting data from the web API
+    loadauteurs() {
+      this.auteurservice.getAuteur()
+      .subscribe(
+         (auteurData: any) => {
+        console.log(auteurData);
+        this.auteurs = auteurData;
+      });
+    }
   // method for saving the art
   saveArt(values: { titre: string; nom: string; prenom: string; annee: string; details: string; }) {
     // we are using form data for preparing the form value. We avoid the JSON encoding and decoding method via HTTP requests.

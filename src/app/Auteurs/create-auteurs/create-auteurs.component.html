@@ -1,0 +1,30 @@
+<div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-12 col-md-12 sol-sm-12">
+            <form [formGroup]="auteurForm" (ngSubmit)="saveauteur(auteurForm.value)">
+     
+              <div class="form-group">
+                <label>Nom</label>
+                <input type="text" class="form-control" placeholder="Nom" formControlName="nom" required>
+                <div class="alert-danger" *ngIf="!auteurForm.controls['nom'].valid && (auteurForm.controls['nom'].touched)">
+                  <div [hidden]="!auteurForm.controls['nom'].errors.required">
+                    Le nom est requis.
+                  </div>
+                </div> 
+              </div>
+              <div class="form-group">
+                <label>Prenom</label>
+                <input type="text" class="form-control" placeholder="Prenom" formControlName="prenom" required>
+                <div class="alert-danger" *ngIf="!auteurForm.controls['prenom'].valid && (auteurForm.controls['prenom'].touched)">
+                  <div [hidden]="!auteurForm.controls['prenom'].errors.required">
+                    Le prenom est requis.
+                  </div>
+                </div> 
+              </div>
+          
+    <!-------------Foms "valid" à revoir!!! -------------->
+              <button type="submit" class="btn btn-primary" [disabled]="!auteurForm.valid">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>

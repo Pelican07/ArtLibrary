@@ -1,7 +1,16 @@
-<div class="card">
-    <img src="../assets/old-books-1280.jpg" alt="Avatar" style="width:100%">
-    <div class="container">
-        <h4><b>John Doe</b></h4> 
-        <p>Architect & Engineer</p> 
+<div class="row my-3">
+    <div *ngFor="let book of books; let i =index;" class=" .col-xl-2 col-lg-4 col-md-6 col-sm-12 m-2 card">
+        <div class="textBdd" (click)="getNavigation('readBook', book.id)">
+            <h4><b>{{book.titre}}</b></h4> 
+            <p>{{book.nom_auteur}} {{book.prenom_auteur}}</p> 
+            <p>1960</p> 
+        </div>
+        <div class="containerImage">
+            <img src="../assets/old-books-rect.jpg" alt="Avatar" style="width:100%">
+            <a class="buttonIcone">
+                <i class="fas fa-pen mr-2 fa-2x ico" (click)="getNavigation('updateBook', book.id)" style="color:antiquewhite"></i> 
+                <i class="fas fa-trash-alt mr-2 fa-2x ico" (click)="deleteBook(book.id)" style="color: rgb(189, 47, 59)"></i>
+            </a>
+        </div>
     </div>
 </div>

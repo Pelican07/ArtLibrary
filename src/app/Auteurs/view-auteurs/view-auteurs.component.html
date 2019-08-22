@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 col-xs-12">
+        <button class="btn btn-success" (click)="getNavigation('createAuteur', '')">Create New Auteur</button>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 col-xs-12">
+        <table #AuteursTable class="display" style="width:100%">
+          <thead>
+          <tr>
+          <th>#</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let Auteur of auteurs; let i =index;">
+            <td>{{Auteur.id}}</td>
+            <td>{{Auteur.nom}}</td>
+            <td>{{Auteur.prenom}}</td>
+            <td>
+              <button type="button" class="btn btn-success" (click)="getNavigation('readAuteur', Auteur.id)">Read</button>
+              <button type="button" class="btn btn-warning" (click)="getNavigation('updateAuteur', Auteur.id)">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="deleteAuteur(Auteur.id)">Delete</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
