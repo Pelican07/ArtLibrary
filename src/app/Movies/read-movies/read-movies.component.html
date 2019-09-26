@@ -1,1 +1,30 @@
-<p>read-movies works!</p>
+<div class="container justify-content-center">
+    <div class="row">
+      <div class="col-12 col-lg-12 col-md-12 sol-sm-12">
+        <table class="table table-striped">
+          <tr>
+            <td>Titre</td>
+            <td>{{movieData['titre_film']}}</td>
+          </tr>
+          <tr>
+            <td>Nom</td>
+            <td>{{movieData['nom_realisateur']}}</td>
+          </tr> 
+          <tr>
+              <td>Prénom</td>
+              <td>{{movieData['prenom_realisateur']}}</td>
+          </tr> 
+          <tr>
+            <td>Année</td>
+            <td>{{movieData['annee']}}</td>
+          </tr> 
+          <tr>
+            <td>Resumé</td>
+            <td>{{movieData['resume_film']}}</td>
+          </tr>
+        </table>
+        <br>
+        <button class="btn btn-warning" (click)="navigation('pageMovies')">Go Back</button>
+      </div>
+    </div>
+  </div>

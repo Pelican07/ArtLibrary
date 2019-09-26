@@ -1,4 +1,21 @@
-<div class="container">
+<div class="row my-3">
+  <div *ngFor="let art of arts; let i =index;" class=" .col-xl-2 col-lg-4 col-md-6 col-sm-12 m-2 card">
+      <div class="textBdd" (click)="getNavigation('readArt', art.a_id)">
+          <h4><b>{{art.titre_oeuvre}}</b></h4> 
+          <p>{{art.nom}} {{art.prenom}}</p> 
+          <p>{{art.annee}}</p> 
+      </div>
+      <div class="containerImage">
+          <img src="../assets/matisse_rect.jpg" alt="Avatar" style="width:100%">
+          <a class="buttonIcone">
+              <i class="fas fa-pen mr-2 fa-2x ico" (click)="getNavigation('updateArt', art.a_id)" style="color:antiquewhite"></i> 
+              <i class="fas fa-trash-alt mr-2 fa-2x ico" (click)="deleteArt(art.a_id)" style="color: rgb(189, 47, 59)"></i>
+          </a>
+      </div>
+  </div>
+</div>
+
+<!-- <div class="container">
     <div class="row">
       <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 col-xs-12">
         <button class="btn btn-success" (click)="getNavigation('createArt', '')">Create New Art</button>
@@ -38,4 +55,4 @@
         </table>
       </div>
     </div>
-  </div>
+  </div> -->

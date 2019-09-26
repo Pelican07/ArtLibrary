@@ -13,24 +13,72 @@
               </div>
               
             <!-- Possibilité choix d'un auteur dans une liste déroulante. Reste à rajouter formcontrol!!! -->
+
+            <!-- <div class="form-group">
+                <div class="row">
+                    <label>Auteur</label>
+                    <input type="text" class="form-control" placeholder="Nom" formControlName="nom" required>
+                    <input type="text" class="form-control" placeholder="Prenom" formControlName="prenom" required>
+                </div>
+              </div>  -->
+
+             <!--  Version d'origine 
+                <div class="form-group">
+                  <label>Nom</label>
+                  <input type="text" class="form-control" placeholder="Nom" formControlName="nom" required>
+                  <div class="alert-danger" *ngIf="!artForm.controls['nom'].valid && (artForm.controls['nom'].touched)">
+                    <div [hidden]="!artForm.controls['nom'].errors.required">
+                      Le nom est requis.
+                    </div>
+                  </div> 
+                </div>
+                <div class="form-group">
+                  <label>Prenom</label>
+                  <input type="text" class="form-control" placeholder="Prenom" formControlName="prenom" required>
+                  <div class="alert-danger" *ngIf="!artForm.controls['prenom'].valid && (artForm.controls['prenom'].touched)">
+                    <div [hidden]="!artForm.controls['prenom'].errors.required">
+                      Le prenom est requis.
+                    </div>
+                  </div> 
+                </div>
+              -->
+
+            <!-- Début nouveau test 02092019 -->
+            <div class="form-group">
+              <p>Auteur</p>
+              <div class="row">
+                <div class="col-6">
+                  <div>
+                    <select type="text" class="form-control" formControlName="nom" required>
+                      <option value="">Sélectionne un nom</option>
+                      <option *ngFor="let Auteur of auteurs" [value]="Auteur.id">{{Auteur.nom}}</option>
+                    </select>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Ou crée un nouveau nom d'auteur..." formControlName="nom" required>
+                </div>
+                <div class="col-6">
+                  <div>
+                    <select type="text" class="form-control" placeholder="Ou crée un nouveau prénom d'auteur..." formControlName="prenom" required>
+                        <option value="">Sélectionne un prénom</option>
+                        <option *ngFor="let Auteur of auteurs" [value]="Auteur.id">{{Auteur.prenom}}</option>
+                    </select>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Prenom" formControlName="prenom" required>
+                </div>
+
+              </div>  
+            </div>
+          
+            
+            <!-- Option Select seul
               <div class="form-group">
                 <p>Auteur</p>
                 <select >
                   <option [ngValue]="null">Sélectionne un auteur</option>
                   <option *ngFor="let Auteur of auteurs" [value]="Auteur.id">{{Auteur.nom}} {{Auteur.prenom}}</option>
                 </select>
-              </div>
-              <div class="form-group">
-                <p>Ou crée un nouvel auteur !</p>
-                <div class="row">
-                  <div class="col-6">
-                    <input type="text" class="form-control" placeholder="Nom" formControlName="nom" required>
-                  </div>
-                  <div class="col-6">
-                    <input type="text" class="form-control" placeholder="Prenom" formControlName="prenom" required>
-                  </div>
-                </div>
-              </div>
+              </div> 
+            -->
 
               <div class="form-group">
                 <label>Annee</label>
@@ -40,7 +88,7 @@
                         L'année est requise.
                     </div>
                 </div> 
-            </div>
+              </div>
               <div class="form-group">
                 <label>Caractéristiques</label>
                 <input type="text" class="form-control" placeholder="details" formControlName="details" required>
@@ -59,6 +107,6 @@
     <!-------------Foms "valid" à revoir!!! -------------->
               <button type="submit" class="btn btn-primary" [disabled]="!artForm.valid">Submit</button>
             </form>
-          </div>
         </div>
       </div>
+    </div>

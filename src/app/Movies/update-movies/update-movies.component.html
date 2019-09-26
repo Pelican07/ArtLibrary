@@ -1,1 +1,64 @@
-<p>update-movies works!</p>
+<div class="container justify-content-center">
+    <div class="row">
+      <div class="col-12 col-lg-12 col-md-12 sol-sm-12">
+        <form [formGroup]="movieForm" (ngSubmit)="updateMovieData(movieForm.value)">
+  
+          <div class="form-group">
+            <label>Titre</label>
+            <input type="text" class="form-control" placeholder="Titre" formControlName="titre" required>
+            <div class="alert-danger" *ngIf="!movieForm.controls['titre'].valid && (movieForm.controls['titre'].touched)">
+              <div [hidden]="!movieForm.controls['titre'].errors.required">
+                Titre is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Nom</label>
+            <input type="text" class="form-control" placeholder="Nom" formControlName="nom" required>
+            <div class="alert-danger" *ngIf="!movieForm.controls['nom'].valid && (movieForm.controls['nom'].touched)">
+              <div [hidden]="!movieForm.controls['nom'].errors.required">
+                Nom is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Prénom</label>
+            <input type="text" class="form-control" placeholder="Prénom" formControlName="prenom" required>
+            <div class="alert-danger" *ngIf="!movieForm.controls['prenom'].valid && (movieForm.controls['prenom'].touched)">
+              <div [hidden]="!movieForm.controls['prenom'].errors.required">
+                Prenom is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Année</label>
+            <input type="text" class="form-control" placeholder="Année" formControlName="annee" required>
+            <div class="alert-danger" *ngIf="!movieForm.controls['annee'].valid && (movieForm.controls['prenom'].touched)">
+              <div [hidden]="!movieForm.controls['annee'].errors.required">
+                Annee is required.
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Résumé</label>
+            <input type="text" class="form-control" placeholder="Resume" formControlName="resume" required>
+            <div class="alert-danger" *ngIf="!movieForm.controls['resume'].valid && (movieForm.controls['resume'].touched)">
+              <div [hidden]="!movieForm.controls['resume'].errors.required">
+                Résumé is required.
+              </div>
+              <div [hidden]="!movieForm.controls['resume'].errors.minlength">
+                Résumé must be have 10 character length.
+              </div>
+            </div>
+          </div>
+  
+          <button type="submit" class="btn btn-primary" [disabled]="!movieForm.valid">Submit</button>
+  
+        </form>
+      </div>
+    </div>
+  </div>

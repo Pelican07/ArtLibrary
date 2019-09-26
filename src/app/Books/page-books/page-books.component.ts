@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class PageBooksComponent implements OnInit {
 
-  constructor(private crudService: BookService, private router: Router) { }
+  constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit() {
   }

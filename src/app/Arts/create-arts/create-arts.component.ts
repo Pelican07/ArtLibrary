@@ -58,7 +58,7 @@ export class CreateArtsComponent implements OnInit {
     // accessing the create product service to save the product into the database
     this.artService.createArt(artData).subscribe(result => {
       // Once the product created successfully, we will redirect to the root page
-      this.router.navigate(['']);
+      this.router.navigate(['pageArts']);
     });
   }
 

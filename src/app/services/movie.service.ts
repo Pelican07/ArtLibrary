@@ -4,30 +4,25 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class BookService {
-   // base api url
-   public url = 'http://localhost/web_api_library/book/';
+export class MovieService {
+  // base api url
+  public url = 'http://localhost/web_api_library/movie/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getBooks() {
+  getMovies() {
     return this.http.get(this.url + 'view.php');
   }
-  getBookDetails(id: number) {
+  getMovieDetails(id: number) {
     return this.http.get(this.url + 'view_one.php?id=' + id);
   }
-  createBook(data: any) {
+  createMovie(data: any) {
     return this.http.post(this.url + 'create.php', data);
   }
-  updateBook(data: any) {
+  updateMovie(data: any) {
     return this.http.post(this.url + 'update.php', data);
   }
-  deleteBook(id: number) {
+  deleteMovie(id: number) {
     return this.http.get(this.url + 'delete.php?id=' + id);
   }
-
- /*  // méthode upload d'images
-  uploadFile(formData) {
-    return this.http.post(this.url + 'upload.php', formData);
-  } */
 }

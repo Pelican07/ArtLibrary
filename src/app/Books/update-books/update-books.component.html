@@ -1,6 +1,7 @@
 <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-lg-12 col-md-12 sol-sm-12">
+
         <form [formGroup]="bookForm" (ngSubmit)="updateBookData(bookForm.value)">
   
           <div class="form-group">
@@ -45,10 +46,18 @@
               </div>
             </div>
           </div>
+
+          
+          <div class="form-group" method="POST" enctype="multipart/form-data">
+            <label>Book Image</label>
+            <input type="file" class="form-control" formControlName="image" #bookImageFile>
+            <p><strong>Note:</strong> Seuls les formats .jpg, .jpeg, .jpeg, .gif, .png sont autorisés jusqu'à une taille maximale de 5 Mo.</p>
+          </div>  
   
           <button type="submit" class="btn btn-primary" [disabled]="!bookForm.valid">Submit</button>
   
         </form>
+
       </div>
-    </div>
   </div>
+</div>
